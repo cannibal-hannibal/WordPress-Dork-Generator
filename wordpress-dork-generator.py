@@ -59,7 +59,7 @@ def banner():
 def main():
     banner()
     sayi = int(input("Oluşturmak istediğiniz dork sayısı: "))
-    dil = input("kelimeler hangi dille oluşturulsun?(örn: en): ")
+    dil = input("Kelimeler hangi dille oluşturulsun?(örn: en): ")
     dosya = input("Dorkları kayıt etmesini istediğiniz dosya: ")
     kayit = open(dosya, "w", encoding="utf-8")
     dorklar = []
