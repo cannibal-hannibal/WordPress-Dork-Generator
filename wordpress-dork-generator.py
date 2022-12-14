@@ -68,7 +68,7 @@ def main():
         dork = rastgele_dork()
         print(f"{Fore.LIGHTRED_EX}  +{Fore.WHITE} {dork + kelime}")
         dorklar.append(dork + kelime)
-    for dork in dorklar:
+    for dork in list(set(dorklar)):
         kayit.write(dork + "\n")
     kayit.close()
     print(f"{Fore.LIGHTCYAN_EX}+{Fore.LIGHTWHITE_EX} {str(len(dorklar))} adet dork {dosya} dosyasına kayıt edildi!")
