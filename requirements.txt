@@ -1,0 +1,4 @@
+googletrans
+colorama
+fake_useragent
+requests
