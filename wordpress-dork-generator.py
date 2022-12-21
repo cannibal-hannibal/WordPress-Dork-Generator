@@ -20,19 +20,10 @@ def rastgele_kelime(dil):
 
 def rastgele_dork():
     dorklar = [
-        '("uncategorized")',
-        '("Just another WordPress site")',
         '("author/admin")',
-        '("My Sýte Wordpress")',
-        '("This is my first post")',
+        '("Just another WordPress site")',
         '("Welcome to WordPress. This is your first post.")',
-        '("A WordPress Commenter on Hello world!")',
-        '("Welcome to WordPress!")',
-        '("A WordPress Commenter")',
-        '"Proudly powered by WordPress")',
-        '("Hello world. This my website!")',
-        '("My Wordpress Blog")',
-        '("Mr WordPress on Hello world!")'
+        '("A WordPress Commenter on Hello world!")'
     ]
     return random.choice(dorklar)
 
@@ -62,12 +53,18 @@ def main():
     dil = input("Kelimeler hangi dille oluşturulsun?(örn: en): ")
     dosya = input("Dorkları kayıt etmesini istediğiniz dosya: ")
     kayit = open(dosya, "w", encoding="utf-8")
+    d_ = rastgele_kelime(dil)
     dorklar = []
     for _ in range(sayi):
-        kelime = rastgele_kelime(dil)
-        dork = rastgele_dork()
-        print(f"{Fore.LIGHTRED_EX}  +{Fore.WHITE} {dork + kelime}")
-        dorklar.append(dork + kelime)
+        while True:
+            try:
+                kelime = rastgele_kelime(dil)
+                dork = rastgele_dork()
+                print(f"{Fore.LIGHTRED_EX}  +{Fore.WHITE} {dork + kelime}")
+                dorklar.append(dork + kelime)
+                break
+            except:
+                continue
     for dork in list(set(dorklar)):
         kayit.write(dork + "\n")
     kayit.close()
