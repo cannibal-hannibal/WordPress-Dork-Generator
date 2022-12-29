@@ -1,12 +1,11 @@
 from googletrans import Translator, LANGUAGES
 from colorama import *
-from fake_useragent import UserAgent
 import requests
 import random
 
 
 kelimeler = requests.get("https://svnweb.freebsd.org/csrg/share/dict/words?view=co&content-type=text/plain", headers={
-    "User-Agent": UserAgent().random
+    "User-Agent": "Mozilla/5.0 (iPad; CPU OS 8_3 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12F69 Safari/600.1.4"
 }).text.splitlines()
 
 
